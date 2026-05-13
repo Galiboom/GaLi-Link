@@ -1,0 +1,19 @@
+<view class="container">
+  <view class="liquid-bg"></view>
+  
+  <view class="glass-card">
+    <view class="status-bar">
+      <text class="device-name">{{deviceName || 'GaLi-Link'}}</text>
+      <view class="dot {{connected ? 'online' : ''}}"></view>
+    </view>
+    
+    <view class="data-section">
+      <text class="hr-value">{{heartRate}}</text>
+      <text class="unit">BPM</text>
+    </view>
+
+    <button class="action-btn" bindtap="navToConnect">
+      {{connected ? '切换设备' : '搜索手环'}}
+    </button>
+  </view>
+</view>

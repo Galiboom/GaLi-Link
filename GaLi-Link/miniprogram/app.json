@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/device",
+      "pages": [
+        "device"
+      ]
+    },
+    {
+      "root": "pages/example",
+      "pages": [
+        "index"
+      ]
+    },
+    {
+      "root": "pages/history",
+      "pages": [
+        "history"
+      ]
+    }
+  ],
+  "window": {
+    "backgroundColor": "#030712",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#030712",
+    "navigationBarTitleText": "GaLi Link",
+    "navigationBarTextStyle": "white"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "GaLi-Link 需要位置权限来搜索周边的蓝牙手环"
+    }
+  },
+  "requiredBackgroundModes": [
+    "location",
+    "bluetooth-peripheral"
+  ],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

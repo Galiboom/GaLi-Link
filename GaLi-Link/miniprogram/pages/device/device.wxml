@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="liquid-bg">
+    <view class="blob blob-indigo"></view>
+  </view>
+
+  <view class="content">
+    <view class="glass-card header">
+      <text class="title">搜索设备</text>
+      <view class="loader {{isSearching ? 'scanning' : ''}}"></view>
+    </view>
+
+    <scroll-view scroll-y class="device-list">
+      <view wx:for="{{devices}}" wx:key="deviceId" 
+            class="glass-card device-item" 
+            bindtap="connectTo" 
+            data-device-id="{{item.deviceId}}"
+            data-name="{{item.name || item.localName}}">
+        <view class="device-info">
+          <text class="device-name">{{item.name || item.localName || '未知设备'}}</text>
+          <text class="device-id">ID: {{item.deviceId}}</text>
+        </view>
+        <view class="rssi">信号: {{item.RSSI}}dBm</view>
+      </view>
+      
+      <view wx:if="{{devices.length === 0}}" class="empty-tip">
+        正在寻找周边的 GaLi 设备...
+      </view>
+    </scroll-view>
+
+    <button class="glass-btn" bindtap="{{isSearching ? 'stopSearch' : 'startSearch'}}">
+      {{isSearching ? '停止搜索' : '重新扫描'}}
+    </button>
+  </view>
+</view>

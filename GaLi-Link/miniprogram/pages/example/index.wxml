@@ -1,0 +1,4 @@
+<view class="page-container">
+  <view class="title">GaLi Link Example</view>
+  <view class="info">This page is kept in a subpackage so demo code does not increase the main package size.</view>
+</view>

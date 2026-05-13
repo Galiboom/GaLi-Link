@@ -1,0 +1,32 @@
+/** pages/device/device.wxss **/
+.container { width: 100vw; height: 100vh; background: #030712; position: relative; }
+.liquid-bg { position: absolute; width: 100%; height: 100%; filter: blur(100px); z-index: 1; }
+.blob-indigo { width: 600rpx; height: 600rpx; background: #6366f1; top: 20%; left: 10%; opacity: 0.4; }
+
+.content { position: relative; z-index: 10; padding: 40rpx; display: flex; flex-direction: column; height: 100vh; box-sizing: border-box; }
+
+.header { display: flex; justify-content: space-between; align-items: center; margin-top: 60rpx; }
+.title { color: #fff; font-size: 48rpx; font-weight: bold; }
+
+/* 扫描动画助手 */
+.loader { width: 40rpx; height: 40rpx; border: 4rpx solid #00d2ff; border-radius: 50%; border-top-color: transparent; }
+.scanning { animation: rotate 1s linear infinite; }
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+.device-list { flex: 1; margin: 40rpx 0; overflow: hidden; }
+.device-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20rpx; padding: 30rpx; transition: all 0.3s; }
+.device-item:active { background: rgba(255, 255, 255, 0.2); transform: scale(0.98); }
+
+.device-name { display: block; color: #fff; font-size: 32rpx; font-weight: 500; }
+.device-id { color: rgba(255, 255, 255, 0.4); font-size: 22rpx; }
+.rssi { color: #00d2ff; font-size: 24rpx; }
+
+.glass-btn {
+  background: rgba(0, 210, 255, 0.2);
+  color: #00d2ff;
+  border: 1px solid rgba(0, 210, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 100rpx;
+  width: 100%;
+  margin-bottom: 60rpx;
+}

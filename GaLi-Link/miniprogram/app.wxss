@@ -1,0 +1,16 @@
+/** app.wxss **/
+page {
+  /* 定义极夜背景色 */
+  --bg-color: #030712;
+  /* 玻璃基础色：微白半透明 */
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  /* 玻璃亮边：模拟光线折射 */
+  --glass-border: rgba(255, 255, 255, 0.15);
+  /* 强调色：GaLi-Link 极客蓝 */
+  --accent-blue: #00d2ff;
+  --accent-purple: #9d50bb;
+  
+  background-color: var(--bg-color);
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
