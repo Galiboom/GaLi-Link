@@ -1,28 +1,26 @@
-GaLi-Link
-WeChat-Pulse-Broadcast (微信小程序心率广播)
-这是一个基于微信小程序低功耗蓝牙（BLE）技术开发的心率广播插件/应用。它可以让搭载心率传感器的智能设备（如华为手环、小米手环、Apple Watch 或专用心率带）通过蓝牙与小程序连接，并将实时心率数据同步展示或进行二次转发。
+# GaLi-Link 💓 (WeChat-Pulse-Broadcast)
 
-📖 项目简介
-在运动健身、直播互动或压力监测等场景下，获取实时心率数据至关重要。本项目提供了一套完整的解决方案：
+> **GaLi-Link** 是一款基于微信小程序低功耗蓝牙 (BLE) 技术的心率实时监测与广播工具。
 
-设备发现：自动扫描周边支持标准 BLE 心率服务的设备。
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-WeChat-brightgreen.svg)](https://mp.weixin.qq.com/cgi-bin/wx)
+[![Stars](https://img.shields.io/github/stars/Galiboom/GaLi-Link)](https://github.com/Galiboom/GaLi-Link/stargazers)
 
-连接管理：稳定连接并订阅心率特征值（Characteristic）。
+## 🌟 项目亮点
 
-数据解析：遵循 Bluetooth SIG Standard (0x180D) 协议，实时解析心率数值。
+* **全标准协议支持**：完美支持 Bluetooth SIG (0x180D) 标准心率服务，兼容 Polar、Garmin、华为、小米等市面上大部分心率带和开启了广播模式的手环。
+* **低功耗设计**：采用高效的 BLE 扫描算法，减少手机和穿戴设备的电量消耗。
+* **零延迟展示**：实时解析心率数据，支持心率波动的动态可视化图表展示。
+* **兼容性处理**：自动处理 `uint8` 和 `uint16` 格式的数据流，确保障不同设备的心率读数准确无误。
 
-可视化展示：动态图表实时反馈心率波动。
+## 📂 目录结构
 
-🛠 技术架构
-该项目主要利用了微信小程序的蓝牙低功耗（Low Energy）API 接口：
-
-wx.openBluetoothAdapter：初始化蓝牙模块。
-
-wx.startBluetoothDevicesDiscovery：搜索外部心率设备。
-
-wx.createBLEConnection：建立 GATT 连接。
-
-wx.notifyBLECharacteristicValueChange：订阅 0x2A37（Heart Rate Measurement）特征值。
-
-心率数据解析原理
-根据标准协议，心率数据的第一个字节为标志位（Flags），随后是心率数值。本项目已处理 uint8 与 uint16 两种格式的自动兼容。
+```text
+GaLi-Link/
+├── GaLi-Link/         # 小程序源代码
+│   ├── pages/         # 页面文件夹 (设备搜索、心率展示)
+│   ├── utils/         # 工具类 (数据解析逻辑、蓝牙封装)
+│   ├── app.js         # 全局入口
+│   └── app.json       # 页面配置
+├── README.md          # 项目说明
+└── .gitignore         # 忽略文件
